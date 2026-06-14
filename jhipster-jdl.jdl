@@ -1,0 +1,94 @@
+// ===== ÉNUMÉRATIONS =====
+
+enum TypeUtilisateur {
+    PROFESSIONNEL,
+    DEMANDEUR_AIDE,
+    BENEVOLE
+}
+
+enum StatutRendezVous {
+    EN_ATTENTE,
+    CONFIRME,
+    ANNULE,
+    TERMINE
+}
+
+enum StatutArticle {
+    BROUILLON,
+    PUBLIE,
+    ARCHIVE
+}
+
+// ===== ENTITÉS =====
+
+entity Profil {
+    dateNaissance LocalDate required
+    biographie TextBlob
+    photo ImageBlob
+    typeUtilisateur TypeUtilisateur required
+    ville String
+    specialite String
+
+}
+
+entity Article {
+    titre String required
+    description TextBlob
+    tag String
+    datePublication Instant
+    statut StatutArticle required
+}
+
+entity Conversation {
+    dateCreation Instant required
+}
+
+entity Message {
+    contenu TextBlob required
+    dateEnvoi Instant required
+    lu Boolean
+}
+
+entity RendezVous {
+    titre String required
+    description TextBlob
+    dateHeure ZonedDateTime required
+    enLigne Boolean
+    lienVisio String
+    statut StatutRendezVous required
+}
+
+entity CentreInteret {
+    libelle String required
+}
+
+// ===== RELATIONS =====
+
+relationship OneToOne {
+    // Lie chaque Profil à un User JHipster (login, email, password)
+    Profil{user(login)} to User with builtInEntity
+}
+
+relationship ManyToOne {
+    Message{conversation required} to Conversation
+    Message{expediteur(login)} to User with builtInEntity
+    Article{auteur(login)} to User with builtInEntity
+    RendezVous{organisateur(login)} to User with builtInEntity
+    RendezVous{participant(login)} to User with builtInEntity
+}
+
+relationship ManyToMany {
+    Conversation{participant(login)} to User with builtInEntity
+    Profil{centreInteret} to CentreInteret
+}
+
+// ===== OPTIONS =====
+
+paginate Profil, Article, RendezVous with pagination
+paginate Message with infinite-scroll
+
+service all with serviceImpl
+
+filter Profil, Article, RendezVous
+
+dto * with mapstruct
