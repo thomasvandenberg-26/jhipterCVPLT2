@@ -29,5 +29,5 @@ import org.tvdb.cavapaslatete.config.TestSecurityConfiguration;
         ElasticsearchTestConfiguration.class,
     }
 )
-@ImportTestcontainers({ { DatabaseTestcontainer.class, ElasticsearchTestContainer.class }, RedisTestContainer.class })
+@ImportTestcontainers({ DatabaseTestcontainer.class, ElasticsearchTestContainer.class, RedisTestContainer.class })
 public @interface IntegrationTest {}
