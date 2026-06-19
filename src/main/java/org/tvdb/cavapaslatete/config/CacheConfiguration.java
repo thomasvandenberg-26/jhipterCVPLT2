@@ -76,6 +76,15 @@ public class CacheConfiguration {
             createCache(cm, org.tvdb.cavapaslatete.domain.User.class.getName(), jcacheConfiguration);
             createCache(cm, org.tvdb.cavapaslatete.domain.Authority.class.getName(), jcacheConfiguration);
             createCache(cm, org.tvdb.cavapaslatete.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            createCache(cm, org.tvdb.cavapaslatete.domain.Profil.class.getName(), jcacheConfiguration);
+            createCache(cm, org.tvdb.cavapaslatete.domain.Profil.class.getName() + ".centreInterets", jcacheConfiguration);
+            createCache(cm, org.tvdb.cavapaslatete.domain.Article.class.getName(), jcacheConfiguration);
+            createCache(cm, org.tvdb.cavapaslatete.domain.Conversation.class.getName(), jcacheConfiguration);
+            createCache(cm, org.tvdb.cavapaslatete.domain.Conversation.class.getName() + ".participants", jcacheConfiguration);
+            createCache(cm, org.tvdb.cavapaslatete.domain.Message.class.getName(), jcacheConfiguration);
+            createCache(cm, org.tvdb.cavapaslatete.domain.RendezVous.class.getName(), jcacheConfiguration);
+            createCache(cm, org.tvdb.cavapaslatete.domain.CentreInteret.class.getName(), jcacheConfiguration);
+            createCache(cm, org.tvdb.cavapaslatete.domain.CentreInteret.class.getName() + ".profils", jcacheConfiguration);
             // jhipster-needle-redis-add-entry
         };
     }
