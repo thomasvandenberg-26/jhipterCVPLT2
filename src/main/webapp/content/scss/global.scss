@@ -1,17 +1,5 @@
-@use 'tailwindcss/theme';
-@use 'tailwindcss/utilities';
+@import 'tw-theme';
 
-@theme {
-  --color-cvplt-primary: #065758; /* — navbar, footer, boutons principaux */
-  --color-cvplt-primary-dark: #044344; /* — hover, fonds sombres */
-  --color-cvplt-accent: #42a390; /* — vert principal */
-  --color-cvplt-accent-light: #82c3c5; /* — bordures, puces */
-  --color-cvplt-coral: #c46960; /* — accents rouges */
-  --color-cvplt-bg: #f6f5f1; /* — fond principal */
-  --color-cvplt-surface: #e2f0ef; /* — cartes claires */
-  --color-cvplt-muted: #90a6b4; /* — textes secondaires */
-}
-/* import 'bootstrap-variables'; */
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
 
