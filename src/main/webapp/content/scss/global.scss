@@ -1,5 +1,5 @@
-@import 'tailwindcss/theme';
-@import 'tailwindcss/utilities';
+@use 'tailwindcss/theme';
+@use 'tailwindcss/utilities';
 
 @theme {
   --color-cvplt-primary: #065758; /* — navbar, footer, boutons principaux */

@@ -11,7 +11,7 @@ import { TranslateDirective } from 'app/shared/language';
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './home.html',
   styleUrl: './home.scss',
-  imports: [TranslateDirective, TranslateModule],
+  imports: [TranslateModule],
 })
 export default class Home {
   public readonly account = inject(AccountService).account;
