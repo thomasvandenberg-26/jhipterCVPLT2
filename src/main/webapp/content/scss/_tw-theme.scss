@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @theme {
+  --font-nunito: 'Nunito', ui-sans-serif, system-ui, sans-serif;
   --color-cvplt-primary: #065758; /* navbar, footer, boutons principaux */
   --color-cvplt-primary-dark: #044344; /* hover, fonds sombres */
   --color-cvplt-accent: #42a390; /* vert principal */
